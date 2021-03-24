@@ -1,0 +1,36 @@
+
+<app-sidebar ></app-sidebar>
+<nav class="navbar navbar-expand-lg  py-4 mynav shadow-lg">
+  <button class="navbar-toggler ml-5" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+  <div class="ml-auto draw"><span> draw here </span> <i class="fa fa-signature"></i></div>
+    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+      <li class="nav-item mr-5">
+        <div class="col-lg text-center">
+            <a class="generalBtn orangeBtn "  routerLink="/play-game">Confirm</a>
+            </div>
+      </li>
+      <li class="nav-item mr-5">
+        <div class="col-lg text-center">
+                <a class="generalBtn whiteBtn" (click)="clearcanvas()">Clear</a>
+            </div>
+      </li>
+      <li class="nav-item mr-5">
+        <div class="col-lg text-center">
+                <a class="generalBtn orangeBtn" (click)="backClicked()" >Exit</a>
+            </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container-fluid mt-5">
+<div class="row">
+   <div class="col-4"></div>
+    <div class="col">
+        <canvas #canvas id="canvas" class="crosshair"></canvas>
+    </div>
+</div>
+</div>

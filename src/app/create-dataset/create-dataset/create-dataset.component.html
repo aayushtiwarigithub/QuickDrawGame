@@ -1,0 +1,85 @@
+<app-sidebar ></app-sidebar>
+<nav class="navbar navbar-expand-lg  py-4 mynav shadow-lg">
+  <button class="navbar-toggler ml-5" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+    <li class="nav-item" >
+      <div class="col-lg text-center">
+          <a class="generalBtn orangeBtn" routerLink="">Home</a>
+          </div>
+    </li>
+  </ul>
+  <div class="draw"><span>create dataset </span> <i class="fa fa-signature"></i></div>
+    <div class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2 fontCursive" type="search" id="searchId" placeholder="Search Class"
+       [(ngModel)]="classFilter" aria-label="Search" (keyup.enter)="searchActivated()">
+      <button class="btn my-2 my-sm-0" id="searchIcon" style="background-color: #257f9b; color: white;"
+      (click)="searchActivated()"><i class="fa fa-search"></i></button>
+    </div>
+    
+    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+      <li class="nav-item ">
+        <div class="col-lg text-center">
+                <a class="generalBtn orangeBtn" (click)="openAddClassDialog()">Add Class
+                </a>
+            </div>
+      </li>
+      <li class="nav-item mr-5">
+        <div class="col-lg text-center">
+                <a class="generalBtn whiteBtn" (click)="openHelpDialog()">Help</a>
+            </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container-fluid mt-5 ">
+<div class="row " style="height: 540px;">
+    <div class="col-md-1"></div>
+    <div class="card shadow-lg col-md-4 pt-2" id="stepsId">
+      <h5 class="card-header bColor py-4 "><span class="fontCursive">Steps to Follow</span> </h5>
+      <div class="card-body ">
+        <ul>
+          <li><h3 class="card-text"><span class="fontCursive">Select a Class Name from the table given ahead.</span><br><span class="font-weight-bold fontCursive">Or</span><br>
+            <span class="fontCursive">You may search for any Class if not given.</span></h3></li>
+          <li><h3 class="card-text"><span class="fontCursive">If the desired Class Name is not given, you could create a new one.</span></h3></li>
+          <li><h3 class="card-text fontCursive"><span class="fontCursive">Draw the object on canvas.</span></h3></li>
+          <li><h3 class="card-text"><span class="fontCursive">Submit the object with the above</span> <span class="font-weight-bold fontCursive"> Submit</span> 
+            <span class="fontCursive"> button.</span></h3></li>
+          <li><h3 class="card-text"><span class="fontCursive">If any mistake while drawing, Clear the canvas with the above</span><span class="font-weight-bold fontCursive"> Clear</span>
+            <span class="fontCursive"> button.</span></h3></li>
+          <li><h3 class="card-text"><span class="fontCursive">For any help ahead, press the above </span><span class="font-weight-bold fontCursive">Help</span> 
+            <span class="fontCursive"> button.</span></h3></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+    <div class="col-md-1" id="freeSpaceId" style="display: none;"></div>
+    <div class="col-md-4 shadow-lg pt-2" id="classListId">
+           <button type="button" class="list-group-item list-group-item-action rounded active bColor py-4 fontCursive">
+              Class Name
+            </button>
+        <div class="list-group" id="myUL">
+            <div *ngFor="let cn of classNames | filterBy: classFilter; let num = index">
+            <button type="button" class="list-group-item list-group-item-action fontCursive" 
+                    *ngIf="num<8" (click)="selectClass(cn)" routerLink="/create-dataset/draw-dataset">{{cn}}</button>
+            <button type="button" class="list-group-item list-group-item-action list-group-item-dark fontCursive" 
+                    *ngIf="num==8" (click)="openClassListDialog()">More...</button></div>
+            <div class="card mt-3" *ngIf="(classNames | filterBy: classFilter).length === 0">
+              <div class="card-header fontCursive" style="font-size: large;font-weight: 700;">Sorry, No Class Found!</div>
+              <div class="card-body">
+                <h3 class="card-text"><span class="fontCursive">Choose different Class.</span> </h3>
+                <p class="card-text fontCursive" style="font-weight: 600;">Or</p>
+                <a class="btn bColor fontCursive" style="font-size: large;" (click)="openAddClassDialog()">Create New Class</a>
+              </div>
+            </div>
+          </div>
+    </div>
+    <li class="nav-item ml-5 mt-3" id="btnId"style="display: none;" >
+      <div class="col-lg text-center">
+          <a class="generalBtn orangeBtn" (click)="searchDeactivated()">Back</a>
+          </div>
+    </li>
+</div>

@@ -1,0 +1,28 @@
+<div class="alert alert-danger fontCursive"id="emptyId" style="display:none"role="alert">
+   Please, Enter the Class Name! 
+  <button class="btn btn-outline-danger" (click)="removeEmptyAlert()"><i class="fa fa-times"></i></button>
+</div>
+<div class="alert alert-danger fontCursive"id="existId" style="display:none"role="alert">
+   Class: {{value}} already exists. 
+   <p>Try again!
+  <button class="btn btn-outline-danger" (click)="removeExistAlert()"><i class="fa fa-times"></i></button></p>
+</div>
+<div class="alert alert-success fontCursive"id="successId" style="display:none"role="alert">
+   Class: {{value}} added successfully! 
+</div>
+<div class="card shadow-lg">
+      <h5 class="card-header bColor py-4"><span class="fontCursive">Add Class</span> </h5>
+      <div class="card-body">
+        <form>
+  <div class="form-group">
+    <h4><span class="fontCursive font-weight-bold">Enter Class Name</span></h4>
+    <input type="email" name="value" [(ngModel)]="value" class="form-control fontCursive" id="exampleInputEmail1"
+     aria-describedby="emailHelp" placeholder="Class Name">
+  </div>
+  <div class="row ml-auto mt-4">
+  <button type="submit" class="btn mr-5 generalBtn blueBtn"  (click)="addToClassGroup()">Add</button>
+  <button type="submit" class="btn ml-5 generalBtn whiteBtn mtBtn" [mat-dialog-close]="true">Cancel</button>
+  </div> 
+</form>
+      </div>
+      </div>

@@ -1,0 +1,29 @@
+<div class="container-fluid mt-5">
+<div class="row">
+    <div class="col-md-6 justify-content-md-center">
+        <canvas #canvas id="canvas" class="crosshair"></canvas>
+        <div class="row"></div>
+        <h4>Class Name: {{className}}</h4>
+        <div class="row"></div>
+        <button type="submit" (click)="clearcanvas()">clear</button>
+        <button style="margin-left: 274px;" type="submit" (click)="submitcanvas()"[disabled]="!className">submit</button>    
+    </div>
+    <div class="col-md-4">
+        <div class="list-group">
+            <button type="button" class="list-group-item list-group-item-action active">
+              Class Name
+            </button>
+            <button type="button" class="list-group-item list-group-item-action" #class1 id="Sun" (click)="selectClass(class1.id)">Sun</button>
+            <button type="button" class="list-group-item list-group-item-action" #class2 id="Flower" (click)="selectClass(class2.id)">Flower</button>
+            <button type="button" class="list-group-item list-group-item-action" #class3 id="Umbrella" (click)="selectClass(class3.id)">Umbrella</button>
+            <button type="button" class="list-group-item list-group-item-action" #class4 id="Pencil" (click)="selectClass(class4.id)">Pencil</button>
+            <button type="button" class="list-group-item list-group-item-action" #class5 id="Spoon" (click)="selectClass(class5.id)">Spoon</button>
+            <button type="button" class="list-group-item list-group-item-action" #class6 id="Tree" (click)="selectClass(class6.id)">Tree</button>
+            <button type="button" class="list-group-item list-group-item-action" #class7 id="Spectacles" (click)="selectClass(class7.id)">Spectacles</button>
+            <button type="button" class="list-group-item list-group-item-action" #class8 id="House" (click)="selectClass(class8.id)">House</button>
+            <button type="button" class="list-group-item list-group-item-action" #class9 id="Bird" (click)="selectClass(class9.id)">Bird</button>
+            <button type="button" class="list-group-item list-group-item-action" #class10 id="Hand" (click)="selectClass(class10.id)">Hand</button>
+          </div>
+    </div>
+</div>
+</div>

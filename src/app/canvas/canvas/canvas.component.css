@@ -1,0 +1,6 @@
+canvas {
+     /* height: 384px;
+     width: 384px; */
+     border: 2px solid #000;
+     }
+.crosshair {cursor: crosshair;}

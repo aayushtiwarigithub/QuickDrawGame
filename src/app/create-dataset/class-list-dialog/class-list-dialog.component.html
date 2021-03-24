@@ -1,0 +1,12 @@
+<div class="shadow-lg pt-2">
+           <button type="button" class="list-group-item list-group-item-action rounded 
+           fontCursive active bColor py-4">
+              Class Name
+            </button>
+        <div class="list-group" id="myUL">
+            <div *ngFor="let cn of classNames | filterBy: classFilter">
+            <button type="button" class="list-group-item list-group-item-action fontCursive" 
+                   (click)="selectClass(cn)" routerLink="/create-dataset/draw-dataset">{{cn}}</button>
+          </div>
+          </div>
+</div>
